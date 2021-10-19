@@ -8,12 +8,19 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var answerLabel: UILabel!
+    @IBOutlet weak var askButton: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
 
-
+    @IBAction func askButtonPressed(_ sender: UIButton) {
+        
+    }
+    
 }
 
