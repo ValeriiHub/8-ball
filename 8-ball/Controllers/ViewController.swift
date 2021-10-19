@@ -9,10 +9,16 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // MARK: - @IBOutlets
+    
     @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var askButton: UIButton!
     
+    // MARK: - Properties
+    
     let networking = Networking.shared
+    
+    // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +26,10 @@ class ViewController: UIViewController {
         askButton.layer.cornerRadius = 15
     }
     
+    // MARK: - @IBAction
+    
     @IBAction func askButtonPressed(_ sender: UIButton) {
         networking.fetchAnswer { answer in
-            
             DispatchQueue.main.async {
                 self.answerLabel.text = answer.magic.answer
             }
@@ -33,6 +40,8 @@ class ViewController: UIViewController {
         guard let vc = segue.source as? SettingViewController else { return }
         answerLabel.text = vc.answerTextField.text
     }
+    
+    // MARK: - Methods
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {

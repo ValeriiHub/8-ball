@@ -8,9 +8,13 @@
 import UIKit
 
 class SettingViewController: UIViewController {
+    
+    // MARK: - @IBOutlets
 
     @IBOutlet weak var sliderView: UIView!
     @IBOutlet weak var answerTextField: UITextField!
+    
+    // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +24,8 @@ class SettingViewController: UIViewController {
         sliderView.layer.cornerRadius = 2.5
     }
 }
+
+// MARK: - Extension
 
 extension SettingViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
