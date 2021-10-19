@@ -39,5 +39,11 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        guard let vc = segue.source as? SettingViewController else { return }
+        answerLabel.text = vc.answerTextField.text
+    }
+    
 }
 
