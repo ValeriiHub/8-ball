@@ -13,13 +13,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var askButton: UIButton!
     
     let networking = Networking.shared
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         askButton.layer.cornerRadius = 15
     }
-
+    
     @IBAction func askButtonPressed(_ sender: UIButton) {
         networking.fetchAnswer { answer in
             
@@ -27,6 +27,11 @@ class ViewController: UIViewController {
                 self.answerLabel.text = answer.magic.answer
             }
         }
+    }
+    
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        guard let vc = segue.source as? SettingViewController else { return }
+        answerLabel.text = vc.answerTextField.text
     }
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
@@ -39,11 +44,5 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    @IBAction func unwind(for segue: UIStoryboardSegue) {
-        guard let vc = segue.source as? SettingViewController else { return }
-        answerLabel.text = vc.answerTextField.text
-    }
-    
 }
 
