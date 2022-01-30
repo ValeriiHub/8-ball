@@ -13,6 +13,7 @@ class SettingViewController: UIViewController {
 
     @IBOutlet weak var sliderView: UIView!
     @IBOutlet weak var answerTextField: UITextField!
+    @IBOutlet weak var saveAnswerButton: UIButton!
     
     // MARK: - Life cycle
     
@@ -22,6 +23,7 @@ class SettingViewController: UIViewController {
         answerTextField.delegate = self
         
         sliderView.layer.cornerRadius = 2.5
+        saveAnswerButton.layer.cornerRadius = 15
     }
 }
 

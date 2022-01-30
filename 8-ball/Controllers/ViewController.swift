@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         askButton.layer.cornerRadius = 15
         if Reachability.isConnectedToNetwork() == false {
             answerLabel.text = "Try again later"
